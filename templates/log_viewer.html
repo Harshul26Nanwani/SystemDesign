@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Log Viewer</title>
+    <style>
+        body { font-family: monospace; background: #121212; color: #33ff33; padding: 20px; }
+        #log { white-space: pre-wrap; border: 1px solid #33ff33; padding: 10px; height: 80vh; overflow-y: scroll; }
+    </style>
+</head>
+<body>
+    <h2>Realtime Log Viewer</h2>
+    <div id="log">Connecting...</div>
+
+    <script>
+        const logDiv = document.getElementById("log");
+        const source = new EventSource("/stream");
+
+        source.onmessage = function(event) {
+            logDiv.innerText += event.data + "\n";
+            logDiv.scrollTop = logDiv.scrollHeight;
+        };
+    </script>
+</body>
+</html>
