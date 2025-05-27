@@ -42,7 +42,7 @@ realtime-log-streamer/
 
 1. **Clone this repository:**
 
-git clone https://github.com/your-username/realtime-log-viewer.git
+git clone https://github.com/Harshul26Nanwani/realtime-log-viewer.git
 cd realtime-log-viewer
 
 2. (Optional) Create a virtual environment:
